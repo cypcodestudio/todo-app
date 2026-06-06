@@ -1,0 +1,64 @@
+.stats-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 20px;
+  min-width: 70px;
+
+  .stat-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  &.active .stat-value { color: var(--blue); }
+  &.completed .stat-value { color: var(--green); }
+  &.overdue .stat-value { color: var(--red); }
+}
+
+.progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 120px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.progress-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+}

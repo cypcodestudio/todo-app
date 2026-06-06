@@ -1,0 +1,47 @@
+<div class="app">
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-icon">&#9745;</span>
+        <div>
+          <h1 class="brand-name">TodoFlow</h1>
+          <p class="brand-sub">Stay organized, get things done.</p>
+        </div>
+      </div>
+      <button class="add-btn" (click)="openCreate()">
+        <span class="add-icon">+</span> New Todo
+      </button>
+    </div>
+    @if (loading()) {
+      <div class="loading-bar"></div>
+    }
+  </header>
+
+  @if (error()) {
+    <div class="error-toast">
+      <span>&#9888; {{ error() }}</span>
+      <button (click)="dismissError()">&#10005;</button>
+    </div>
+  }
+
+  <main class="main">
+    <section class="stats-section">
+      <app-todo-stats />
+    </section>
+
+    <section class="filter-section">
+      <app-todo-filter />
+    </section>
+
+    <section class="list-section">
+      <app-todo-list (editRequest)="openEdit($event)" />
+    </section>
+  </main>
+
+  @if (showForm()) {
+    <app-todo-form
+      [editTodo]="editingTodo()"
+      (closed)="closeForm()"
+    />
+  }
+</div>

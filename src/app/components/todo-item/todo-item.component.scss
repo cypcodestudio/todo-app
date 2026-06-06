@@ -1,0 +1,162 @@
+.todo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  transition: all 0.2s;
+  cursor: default;
+
+  &:hover {
+    border-color: var(--blue);
+    box-shadow: 0 2px 12px rgba(99, 102, 241, 0.1);
+
+    .todo-actions { opacity: 1; }
+  }
+
+  &.completed {
+    opacity: 0.6;
+    .todo-title { text-decoration: line-through; color: var(--text-muted); }
+  }
+
+  &.overdue { border-left: 3px solid var(--red); }
+}
+
+.check-btn {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  transition: all 0.15s;
+
+  &:hover { border-color: var(--green); }
+}
+
+.checkmark {
+  color: transparent;
+  font-size: 0.85rem;
+  line-height: 1;
+
+  &.checked {
+    color: #fff;
+  }
+}
+
+.check-btn:has(.checkmark.checked) {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.todo-body {
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.todo-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.todo-title {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.priority-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  &.priority-low    { background: rgba(34, 197, 94, 0.15);  color: var(--green); }
+  &.priority-medium { background: rgba(59, 130, 246, 0.15); color: var(--blue); }
+  &.priority-high   { background: rgba(245, 158, 11, 0.15); color: var(--yellow); }
+  &.priority-urgent { background: rgba(239, 68, 68, 0.15);  color: var(--red); }
+}
+
+.todo-desc {
+  margin: 6px 0 0;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.todo-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.meta-item {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &.muted { opacity: 0.6; }
+  &.overdue-text { color: var(--red); }
+}
+
+.overdue-badge {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--red);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+.tag {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1px 8px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.todo-actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+}
+
+.action-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+
+  &.edit:hover  { border-color: var(--blue);  color: var(--blue); }
+  &.delete:hover { border-color: var(--red); color: var(--red); }
+}

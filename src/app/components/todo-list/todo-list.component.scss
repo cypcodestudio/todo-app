@@ -1,0 +1,107 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+
+  .empty-icon { font-size: 3rem; margin-bottom: 16px; }
+  h3 { font-size: 1.2rem; color: var(--text-primary); margin: 0 0 8px; }
+  p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.select-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+
+  input { cursor: pointer; width: 16px; height: 16px; accent-color: var(--blue); }
+}
+
+.select-label { font-size: 0.85rem; color: var(--blue); font-weight: 600; }
+
+.count-label {
+  margin-left: auto;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.bulk-delete-btn {
+  padding: 6px 14px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--red);
+  border-radius: 8px;
+  color: var(--red);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover { background: var(--red); color: #fff; }
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 12px;
+  padding: 0;
+  transition: background 0.15s;
+
+  &.row-selected { background: rgba(99, 102, 241, 0.05); }
+}
+
+.row-check {
+  margin-top: 18px;
+  flex-shrink: 0;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--blue);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.page-btn {
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover:not(:disabled) { border-color: var(--blue); color: var(--blue); }
+  &:disabled { opacity: 0.4; cursor: not-allowed; }
+}
+
+.page-info {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
