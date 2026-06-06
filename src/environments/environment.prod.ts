@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: '/api/v1',
+  apiUrl: 'https://todo-backend-production-ad18.up.railway.app/api/v1',
 };
